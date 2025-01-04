@@ -1,6 +1,6 @@
 import { isMobile } from "react-device-detect";
 import Input from "../components/Input";
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 import useReservationMutation from "../hooks/useReservationMutation";
 import { useAlertContext } from "../contexts/AlertContext";
 
@@ -40,24 +40,8 @@ export default function FormPage() {
         alt="event/form"
         style={{ width: "100vw", objectFit: "contain" }}
       />
-      <div
-        style={{
-          padding: "118px 0",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100vw",
-          gap: "72px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "58px",
-          }}
-        >
+      <div style={formStyle}>
+        <div style={inputStyle}>
           <Input
             label="사전 예약할 이름을 입력해 주세요"
             placeholder="이름 입력하기"
@@ -91,3 +75,19 @@ export default function FormPage() {
     </div>
   );
 }
+
+const formStyle = {
+  padding: "118px 0",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "100vw",
+  gap: "72px",
+} as CSSProperties;
+
+const inputStyle = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "58px",
+} as CSSProperties;
