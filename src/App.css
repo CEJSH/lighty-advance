@@ -1,0 +1,26 @@
+div {
+  box-sizing: border-box;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.64px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+input {
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+a {
+  text-emphasis: none;
+  text-decoration: none;
+  color: black;
+}

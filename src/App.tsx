@@ -1,19 +1,27 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import FormPage from "./pages/FormPage";
+import Header from "./components/Header";
+import LandingPage from "./pages/LandingPage";
+import { Suspense } from "react";
 
 function App() {
   return (
-    <div className="w-screen h-screen overflow-hidden">
-      {images.map((image) => (
-        <img
-          src={image}
-          alt="image"
-          className="w-full h-full overflow-hidden"
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" Component={LandingPage} />
+        <Route
+          path="/form"
+          element={
+            <Suspense fallback={<></>}>
+              <FormPage />
+            </Suspense>
+          }
         />
-      ))}
-    </div>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
-const images = ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png", "/6.png"];
