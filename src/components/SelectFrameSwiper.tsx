@@ -1,6 +1,5 @@
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
-import "swiper/components/navigation/navigation.min.css";
+import "swiper/swiper.css";
+import "swiper/modules/navigation.min.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import clsx from "clsx";
 import { useRef } from "react";
