@@ -5,29 +5,42 @@ export default function Input({
   placeholder,
   value,
   onChange,
+  isMobile,
 }: {
   label: string;
   placeholder: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  isMobile: boolean;
 }) {
   return (
     <div
       style={{
+        width: "100%",
         flexDirection: "column",
         display: "flex",
-        gap: "31px",
+        gap: isMobile ? "16px" : "31px",
       }}
     >
-      <span>{label}</span>
+      <span
+        style={{
+          fontWeight: 500,
+          fontSize: isMobile ? "16px" : "24px",
+          lineHeight: isMobile ? "20px" : "28.64px",
+        }}
+      >
+        {label}
+      </span>
       <input
         type="text"
         value={value}
         onChange={onChange}
         style={{
-          width: "600px",
-          height: "64px",
-          padding: "15px 32px",
+          fontSize: isMobile ? "14px" : "18px",
+          boxSizing: "border-box",
+          width: isMobile ? "100%" : "500px",
+          height: isMobile ? "50px" : "64px",
+          padding: isMobile ? "15px 20px" : "15px 32px",
           backgroundColor: "#F4F4F4",
           border: "none",
           borderRadius: "9999px",

@@ -61,5 +61,4 @@ const desktopImages = [
   "/desktop/3.png",
   "/desktop/4.png",
   "/desktop/5.png",
-  "/desktop/6.png",
 ];

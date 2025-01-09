@@ -4,6 +4,7 @@ import FormPage from "./pages/FormPage";
 import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
 import { Suspense } from "react";
+import CardPage from "./pages/CardPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" Component={LandingPage} />
+        <Route path="/card" Component={CardPage} />
         <Route
           path="/form"
           element={

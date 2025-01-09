@@ -25,7 +25,9 @@ function Alert({
           {title}
         </span>
         {description ? (
-          <span style={{ display: "block" }}>{description}</span>
+          <span style={{ display: "block", fontSize: "20px" }}>
+            {description}
+          </span>
         ) : null}
         <div
           style={{
