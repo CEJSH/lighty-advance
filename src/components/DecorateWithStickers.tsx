@@ -34,10 +34,11 @@ export default function DecorateWithStickers({
 
   const frames = ["/frame1.jpeg", "/frame2.jpeg", "/frame3.jpeg"];
 
-  const handleCaptureImage = useCallback(async () => {
+  const handleCaptureImage = useCallback(() => {
     if (ref.current === null) return;
-    await toPng(ref.current, { cacheBust: true })
+    toPng(ref.current)
       .then((dataUrl) => {
+        console.log("handlecaptureimage");
         setCardImageUrl(dataUrl);
         setHide(true);
       })
@@ -50,9 +51,7 @@ export default function DecorateWithStickers({
         <span className="text-B4 text-grayscale-500">
           점선 영역이 이미지 영역이에요!
         </span>
-        {/* <button className={styles.button} onClick={onClickSelectFrame}>
-          프레임 선택
-        </button> */}
+
         <button className={styles.button} onClick={handleCaptureImage}>
           스티커 꾸미기
         </button>
@@ -62,7 +61,7 @@ export default function DecorateWithStickers({
         <div id="card" className={clsx(styles.cardContainer)}>
           <div ref={ref} className="relative rounded-[20px] w-full shadow-sm">
             <img
-              src={frames[0 | selectedFrame!]}
+              src={frames[0] || frames[selectedFrame!]}
               width={282}
               height={372}
               alt="card"
@@ -71,7 +70,7 @@ export default function DecorateWithStickers({
             <div className={styles.cardWrapper}>
               <div className={styles.imageWrapper}>
                 <img
-                  src={selectedGathering.invitation_img_url as string}
+                  src={selectedGathering.invitation_img_url}
                   width={230}
                   height={230}
                   style={{

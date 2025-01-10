@@ -51,13 +51,15 @@ export default function ChooseGatheringToDecorate({
         onImageClick={handleImageClick}
         selectedGatheringId={cardSelectedGathering?.id || null}
       />
-      <FixedBottomButton
-        disabled={cardSelectedGathering?.id === ""}
-        label={"꾸미기 시작!"}
-        onClick={() => {
-          onNext();
-        }}
-      />
+      <div>
+        <FixedBottomButton
+          disabled={cardSelectedGathering?.id === ""}
+          label={"꾸미기 시작!"}
+          onClick={() => {
+            onNext();
+          }}
+        />
+      </div>
     </Flex>
   );
 }

@@ -9,7 +9,7 @@ import CardPage from "./pages/CardPage";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {<Header />}
       <Routes>
         <Route path="/" Component={LandingPage} />
         <Route path="/card" Component={CardPage} />

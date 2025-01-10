@@ -11,7 +11,16 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-grayscale-50">
+    <div
+      style={{
+        position: "relative",
+        maxWidth: "430px",
+        margin: "0 auto",
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+      }}
+    >
       {/* <div className={styles.header}>{HeaderReturner()}</div> */}
       {step === 1 && (
         <ChooseGatheringToDecorate onNext={handleGatheringChange} />

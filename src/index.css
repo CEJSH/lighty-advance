@@ -1,60 +1,154 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --dimmed-zIndex: 100;
+  --bottomSheet-zIndex: 101;
+  --toastify-color-light: #000000cc;
+  --toastify-text-color-light: #ffffff;
+  --toastify-text-color-dark: #ffffff;
+  --toastify-toast-bd-radius: 40px;
+  --toastify-toast-min-height: 44px;
+  --toastify-toast-width: none;
+  --toastify-icon-color-success: #6795fa;
+  --toastify-font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root-portal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.react-select__placeholder {
+  color: "#0A0A0At" !important;
+}
+
+.swiper-slide img.slide-img {
+  width: 100%;
+  height: 100%;
+}
+.react-select__input {
+  font-size: 16px !important;
 }
 
 body {
-  margin: 0;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+#__daum__layer_1 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.react-select__indicator-separator {
+  display: none;
+}
+
+.invitation-toast {
+  width: 350px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  background-color: #0a0a0a;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  border-radius: 10px !important;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.invitation-toast-body > div:first-child {
+  width: 20px !important;
+  margin-inline-end: 6px !important;
+}
+.invitation-toast-body > div > svg {
+  width: 20px !important;
+  height: 20px !important;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.Toastify__toast-icon {
+  margin-inline-end: 8px;
+}
+.Toastify__toast-body {
+  display: flex;
+  align-items: center;
+  flex: 0 0 1;
+  width: full;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: calc(14px * -0.03);
+  margin: 0;
+  padding: 0;
 }
-button:hover {
-  border-color: #646cff;
+.Toastify__toast-icon {
+  width: 24px;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.Toastify__toast-body > div {
+  align-items: center;
+  width: full;
+}
+.Toastify__toast-body > div:first-child {
+  margin-inline-end: 8px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.Toastify__toast-body > div > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.Toastify__toast {
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* Internet Explorer */
+    scrollbar-width: none; /* Firefox */
+  }
+}
 
-  button {
-    background-color: #f9f9f9;
+@keyframes selectMenuBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  70% {
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
