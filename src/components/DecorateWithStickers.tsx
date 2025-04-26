@@ -39,8 +39,16 @@ export default function DecorateWithStickers({
     toPng(ref.current)
       .then((dataUrl) => {
         console.log("handlecaptureimage");
+
         setCardImageUrl(dataUrl);
         setHide(true);
+
+        const link = document.createElement("a");
+        link.href = dataUrl; // the image data URL
+        link.download = "/captured-image.png"; // filename for download
+        document.body.appendChild(link); // append to body
+        link.click(); // trigger download
+        document.body.removeChild(link); // remove the link after t
       })
       .catch((err) => console.error(err));
   }, [setCardImageUrl]);

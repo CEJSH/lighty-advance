@@ -39,7 +39,11 @@ export default function DecoratingSection({
       width={282}
       height={372}
       ref={stageRef}
-      style={{ width: "full", display: "flex", justifyContent: "center" }}
+      style={{
+        width: "full",
+        display: "flex",
+        justifyContent: "center",
+      }}
     >
       <Layer
         style={{

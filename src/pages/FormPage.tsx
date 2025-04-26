@@ -27,6 +27,7 @@ export default function FormPage() {
       },
     });
   }
+
   return (
     <div
       style={{
@@ -73,7 +74,9 @@ export default function FormPage() {
                 cursor: "pointer",
               }}
               onClick={() => {
-                mutate({ name, email, reservedAt: new Date() });
+                if (name && email) {
+                  mutate({ name, email, reservedAt: new Date() });
+                }
               }}
             />
           </div>
@@ -115,7 +118,9 @@ export default function FormPage() {
                 cursor: "pointer",
               }}
               onClick={() => {
-                mutate({ name, email, reservedAt: new Date() });
+                if (name && email) {
+                  mutate({ name, email, reservedAt: new Date() });
+                }
               }}
             />
           </div>
