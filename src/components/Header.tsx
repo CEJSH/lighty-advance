@@ -33,12 +33,7 @@ export default function Header() {
           lineHeight: "19.09px",
           letterSpacing: "-0.32px",
         }}
-      >
-        <span style={{ cursor: "pointer" }}>
-          <a href="/form">사전 예약</a>
-        </span>
-        <span style={{ cursor: "pointer" }}>문의</span>
-      </div>
+      ></div>
     </div>
   );
 }
